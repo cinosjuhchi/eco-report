@@ -1,0 +1,57 @@
+:root {
+  --color-bg: #F6F7F8;
+  --color-component: #F6F7F8;
+  --color-primary: #137FEC;
+  --color-header: #111827;
+  --color-secondary: #6B7280;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+*html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-header);
+}
+
+.app-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(17, 24, 39, 0.08);
+}
+
+.text-header {
+  color: var(--color-header) !important;
+}
+
+.text-secondary-custom {
+  color: var(--color-secondary) !important;
+}
+
+.bg-component {
+  background-color: var(--color-component) !important;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  font-family: poppins, sans-serif;
+  border-radius: 16px;
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}

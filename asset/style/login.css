@@ -1,0 +1,134 @@
+.banner-login {
+    border-radius: 0 0 20px 20px;
+    padding: 42px 20px 8px;
+    height: 420px;
+    background-image: linear-gradient(rgba(3,37,65,0.45), rgba(3,37,65,0.45)), url('/asset/image/banner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.banner-description h3 {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bolder;
+    line-height: 40px;
+}
+
+.banner-description p {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.content {
+    background: #ffffff;
+}
+
+.form-login {
+    padding: 24px;
+}
+
+.greeting-text h2 {
+    font-size: 36px;
+    font-weight: bolder;
+    line-height: 40px;  
+    margin-bottom: 6px;  
+}
+
+.greeting-text p {
+    font-size: 16px;    
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.input-label {
+    margin-bottom: 24px;    
+    
+}
+
+.input-label label {
+    display: block;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.input-label input {
+    padding: 16px 24px;
+    border-radius: 16px;
+}
+
+.input-label select,
+.input-label textarea {
+    padding: 16px 24px;
+    border-radius: 16px;
+}
+
+.input-label input:focus {
+    outline: none;
+    border: 2px solid #137FEC;
+}
+
+.input-label select:focus,
+.input-label textarea:focus {
+    outline: none;
+    border: 2px solid #137FEC;
+}
+
+
+@media (min-width: 992px) {
+    main {
+        display: flex;
+        min-height: 100vh;
+        align-items: stretch;
+    }
+
+    .banner-login {
+        flex: 1 1 50%;
+        height: 100vh;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 0;
+        padding: 72px 96px;
+    }
+    
+    .content {
+        flex: 1 1 50%;        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 72px 96px;
+        overflow-y: auto;
+    }
+
+    .banner-header {
+        font-size: 28px;
+    }
+
+    .banner-description h3 {
+        font-size: 34px;
+        line-height: 44px;
+        margin-bottom: 8px;
+    }
+
+    .banner-description p {
+        max-width: 520px;
+    }
+
+    .form-login {
+        width: 100%;
+        max-width: 520px;
+        padding: 0;
+    }
+}
