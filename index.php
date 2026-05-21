@@ -1,5 +1,13 @@
 <?php
+session_start();
 include_once('./config/config.php');
+if (isset($_SESSION['username'])) {
+	header("Location: " . $url . "/page/home/");
+	exit();
+}else {
+	header("Location: " . $url . "/page/login/");
+	exit();
+}
 ?>
 <!doctype html>
 <html lang="en">

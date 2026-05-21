@@ -86,49 +86,37 @@
 
 
 @media (min-width: 992px) {
+    body {
+        overflow-y: hidden;
+    }
     main {
         display: flex;
-        min-height: 100vh;
+        height: 100vh;
         align-items: stretch;
     }
 
     .banner-login {
-        flex: 1 1 50%;
+        flex: 0 0 40%;
         height: 100vh;
         color: #fff;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         border-radius: 0;
-        padding: 72px 96px;
+        background-image: linear-gradient(rgba(3,37,65,0.8), rgba(3,37,65,0.8)), url('/asset/image/banner.png');
     }
-    
+
     .content {
-        flex: 1 1 50%;        
+        flex: 0 0 60%;
         display: flex;
-        align-items: center;
         justify-content: center;
-        padding: 72px 96px;
-        overflow-y: auto;
-    }
-
-    .banner-header {
-        font-size: 28px;
-    }
-
-    .banner-description h3 {
-        font-size: 34px;
-        line-height: 44px;
-        margin-bottom: 8px;
-    }
-
-    .banner-description p {
-        max-width: 520px;
+        align-items: flex-start; /* Align to top */
+        padding: 3rem 2rem;
+        overflow-y: auto; /* Enable scrolling for this container only */
     }
 
     .form-login {
         width: 100%;
-        max-width: 520px;
+        max-width: 650px;
         padding: 0;
     }
 }

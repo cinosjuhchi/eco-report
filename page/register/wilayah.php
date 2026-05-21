@@ -1,14 +1,14 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json;');
 
 $type = $_GET['type'] ?? '';
 
 if ($type === 'regencies') {
     $id = $_GET['province_id'] ?? '';
-    $url = 'https://wilayah.id/api/regencies/' . rawurlencode($id) . '.json';
+    $url = 'https://wilayah.id/api/regencies/' . $id . '.json';
 } elseif ($type === 'districts') {
     $id = $_GET['regency_id'] ?? '';
-    $url = 'https://wilayah.id/api/districts/' . rawurlencode($id) . '.json';
+    $url = 'https://wilayah.id/api/districts/' . $id . '.json';
 } else {
     echo json_encode(['ok' => false, 'data' => []]);
     exit;

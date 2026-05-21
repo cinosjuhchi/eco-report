@@ -1,10 +1,18 @@
 <?php
 session_start();
 require_once '../../config/config.php';
+require_once '../../backend/function.php';
 $assetBase = isset($url) ? $url : '/';
 if (isset($_SESSION['username'])) {
-    header("Location: " . $assetBase . "/");
+    header("Location: " . $assetBase . "page/home/");
     exit();
+}
+
+$error_message = isset($_GET['error']) ? htmlspecialchars($_GET['error']) : null;
+$success_message = isset($_GET['message']) ? htmlspecialchars($_GET['message']) : null;
+
+if (isset($_POST['submit_login'])) {
+    login($_POST);
 }
 ?>
 <!DOCTYPE html>
@@ -37,19 +45,29 @@ if (isset($_SESSION['username'])) {
                     <h2 class="text-center text-header">Selamat Datang Kembali</h2>
                     <p class="text-center text-secondary">Silahkan masuk untuk melanjutkan ke Ecoreport</p>
                 </div>
+
+                <?php if ($error_message): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?= $error_message ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($success_message): ?>
+                    <div class="alert alert-success" role="alert">
+                        <?= $success_message ?>
+                    </div>
+                <?php endif; ?>
+
                 <form action="" method="post">
                     <div class="input-label">
                         <label for="formEmail" class="form-label">Email</label>  
-                        <input type="email" class="form-control" id="formEmail" placeholder="name@example.com">
+                        <input type="email" name="email" class="form-control" id="formEmail" placeholder="name@example.com" required>
                     </div>
                     <div class="input-label">
                         <label for="formPassword" class="form-label">Password</label>  
-                        <input type="password" class="form-control" id="formPassword" placeholder="Password">
-                    </div>        
-                    <div class="d-flex justify-content-end input-label">
-                        <a href="#" class="text-primary text-decoration-none small">Lupa password?</a>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Masuk</button>
+                        <input type="password" name="password" class="form-control" id="formPassword" placeholder="Password" required>
+                    </div>                            
+                    <button type="submit" name="submit_login" class="btn btn-primary w-100">Masuk</button>
 
                     <div class="text-center mt-3">
                         <a href="<?php echo $assetBase; ?>page/register/" class="text-primary text-decoration-none small">Belum punya akun? Daftar</a>
