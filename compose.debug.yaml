@@ -1,6 +1,0 @@
-services:
-  ecoreport:
-    image: ecoreport
-    build:
-      context: .
-      dockerfile: ./Dockerfile
